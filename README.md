@@ -26,6 +26,24 @@ println("The oldest is: $oldest")
 val length = text?.length
 ```
 
+**Making array**
+
+```kotlin
+///////////////////////////////////////////////
+//making array and work with loop + for each
+fun array() {
+    val arr = arrayListOf<Int>(1, 2, 3, 4, 5, 6, 7)
+    println("For Example")
+    for(i in 0 .. arr.size - 1)
+        print(arr[i])
+
+    println()
+    println("ForEach Example")
+
+    arr.forEach { print(it) }
+}
+```
+
 **Making function**
 
 ```kotlin
@@ -187,4 +205,43 @@ class B : MyInterface {
 data class Person(val name: String, val age: Int? = null)
 
 data class Planes(val name: String, val speed: Int)
+```
+
+**ArrayList, List, Map**
+
+```kotlin
+/*
+WORKING WITH ARRAYLIST, LIST, MAP
+ */
+///////////////////////////////////////////////
+fun javas_classes() {
+    /////////////////////////////////
+    //////////ARRAYLIST
+    val arraylist = ArrayList<Int>()
+    arraylist.add(1)
+    arraylist.add(2)
+    arraylist.add(3)
+    arraylist.add(4)
+    arraylist.add(5)
+    arraylist.add(6)
+
+    println()
+    println(arraylist)
+
+    arraylist.remove(3)
+    println(arraylist)
+
+    println(arraylist.get(4))
+    /////////////////////////////////
+    //////////MAP
+    val map = mapOf<Int,String>(1 to "Jhon", 2 to "Kevin", 3 to "Elvin", 4 to "Steve")
+    println(map)
+    println(map.getValue(1))
+    println(map.keys)
+
+    /////////////////////////////////
+    //////////LIST
+    val list = listOf<Int>(1, 2, 3, 4, 5, 6)
+    println(list)
+}
 ```
