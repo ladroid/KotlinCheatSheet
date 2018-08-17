@@ -14,13 +14,26 @@ val a = 5
 var a = 7
 ```
 
-**If statement(Elvis statement)**
+**If-else statement**
+
+*if-else*
+
+```kotlin
+if(a > b)
+        println("$a > $b")
+    else
+        println("$a < $b")
+```
+
+*Elvis statement*
 
 ```kotlin
 val persons = listOf(Person("Alice"), Person("Bob", age = 29))
 val oldest = persons.maxBy {it.age ?: 0}//if age>0 ? a : b
 println("The oldest is: $oldest")
 ```
+
+*if value is null*
 
 ```kotlin
 val length = text?.length
