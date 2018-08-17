@@ -180,6 +180,20 @@ fun array() {
     arr.forEach { print(it) }
 }
 
+///////////////////////////////////////////////
+//making list Immutable, Mutable
+fun list() {
+    val list_imm = listOf(1, 2, 3, 4, 5, 6, 7, 8)
+    println(list_imm)
+
+    val list_mut = mutableListOf<Int>(1, 2, 3, 4, 5, 6, 7)
+    println(list_mut)
+    list_mut.add(8)
+    println(list_mut)
+
+    list_mut.removeAt(0)
+    println(list_mut)
+}
 
 ///////////////////////////////////////////////
 //data class
@@ -248,4 +262,6 @@ fun main(args: Array<String>) {
     println()
     javas_classes()
 
+    println()
+    list()
 }
