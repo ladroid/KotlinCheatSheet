@@ -219,6 +219,15 @@ fun main(args: Array<String>) {
     printSum2(4, 5)
 
     println()
+    ///////////////////////////////////////////////
+    /////if-else
+    if(a > b)
+        println("$a > $b")
+    else
+        println("$a < $b")
+    ///////////////////////////////////////////////
+
+    println()
 
     ///////////////////////////////////////////////
     val persons = listOf(Person("Alice"), Person("Bob", age = 29))
