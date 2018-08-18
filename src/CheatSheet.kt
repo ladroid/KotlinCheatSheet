@@ -180,6 +180,11 @@ fun array() {
     arr.forEach { print(it) }
 }
 
+fun array2() {
+    var array = Array(5, { i -> (i + 1).toString()})
+    array.forEach { println(it) }
+}
+
 ///////////////////////////////////////////////
 //making list Immutable, Mutable
 fun list() {
@@ -267,6 +272,9 @@ fun main(args: Array<String>) {
 
     println()
     array()
+
+    println()
+    array2()
 
     println()
     javas_classes()
