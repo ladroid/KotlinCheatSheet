@@ -41,6 +41,8 @@ val length = text?.length
 
 **Making array**
 
+*Example 1*
+
 ```kotlin
 ///////////////////////////////////////////////
 //making array and work with loop + for each
@@ -54,6 +56,15 @@ fun array() {
     println("ForEach Example")
 
     arr.forEach { print(it) }
+}
+```
+
+*Example 2*
+
+```kotlin
+fun array2() {
+    var array = Array(5, { i -> (i + 1).toString()})
+    array.forEach { println(it) }
 }
 ```
 
