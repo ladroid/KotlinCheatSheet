@@ -217,6 +217,16 @@ data class Person(val name: String, val age: Int? = null)
 data class Planes(val name: String, val speed: Int)
 
 ///////////////////////////////////////////////
+//Exception
+fun exception() {
+    val number = 200
+    if(number !in 0..100) {
+        throw IllegalArgumentException("A number must be between 0 and 100: $number")
+    }
+    else {
+        println("$number")
+    }
+}
 
 fun main(args: Array<String>) {
     println("Hello, world!")
@@ -302,4 +312,8 @@ fun main(args: Array<String>) {
         println("Kotlin Hello")
     }
     println("Kotlin End")
+
+
+    println()
+    exception()
 }
