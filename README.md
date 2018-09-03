@@ -39,6 +39,48 @@ println("The oldest is: $oldest")
 val length = text?.length
 ```
 
+### Try-catch
+
+*Example1*
+
+```kotlin
+fun readNumber(reader: String): Int? {
+    try {
+        val e = reader.toInt()
+        return e
+    } catch (e: NumberFormatException) {
+        return null
+    }
+}
+```
+
+*Example2*
+
+```kotlin
+fun readNumber2(reader: String): Int? {
+    val number = try {
+        return reader.toInt()
+    } catch (e: NumberFormatException) {
+        return null
+    }
+    return number
+}
+```
+
+### Exception
+
+```kotlin
+fun exception() {
+    val number = 200
+    if(number !in 0..100) {
+        throw IllegalArgumentException("A number must be between 0 and 100: $number")
+    }
+    else {
+        println("$number")
+    }
+}
+```
+
 ### Making array
 
 *Example 1*
@@ -300,3 +342,4 @@ println("Kotlin Hello")
 }
 println("Kotlin End")
 ```
+
