@@ -228,6 +228,31 @@ fun exception() {
     }
 }
 
+///////////////////////////////////////////////
+/*
+TRY-CATCH
+ */
+//Example1
+fun readNumber(reader: String): Int? {
+    try {
+        val e = reader.toInt()
+        return e
+    } catch (e: NumberFormatException) {
+        return null
+    }
+}
+
+//Example2
+fun readNumber2(reader: String): Int? {
+    val number = try {
+        return reader.toInt()
+    } catch (e: NumberFormatException) {
+        return null
+    }
+    return number
+}
+///////////////////////////////////////////////
+
 fun main(args: Array<String>) {
     println("Hello, world!")
 
@@ -315,5 +340,7 @@ fun main(args: Array<String>) {
 
 
     println()
-    exception()
+    println(readNumber("45"))
+    println(readNumber2("455"))
+    //exception()
 }
