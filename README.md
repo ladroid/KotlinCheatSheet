@@ -14,6 +14,20 @@ val a = 5
 var a = 7
 ```
 
+### Arithmetic Operations
+
+```kotlin
+val a = 12
+val b = 4
+println("Arithmetic operations")
+println(a shl b) //shift left
+println(a shr b) //shift right
+println(a ushr b)
+println(a and b) //AND operation
+println(a or b) //OR operation
+println(a xor b) //XOR operation
+```
+
 ### If-else statement
 
 *if-else*
