@@ -252,6 +252,19 @@ fun readNumber2(reader: String): Int? {
     return number
 }
 ///////////////////////////////////////////////
+//ARITHMETIC OPERATIONS
+fun aritm_operations() {
+    val a = 12
+    val b = 4
+    println("Arithmetic operations")
+    println(a shl b)
+    println(a shr b)
+    println(a ushr b)
+    println(a and b)
+    println(a or b)
+    println(a xor b)
+}
+///////////////////////////////////////////////
 
 fun main(args: Array<String>) {
     println("Hello, world!")
@@ -343,4 +356,6 @@ fun main(args: Array<String>) {
     println(readNumber("45"))
     println(readNumber2("455"))
     //exception()
+    println()
+    aritm_operations()
 }
