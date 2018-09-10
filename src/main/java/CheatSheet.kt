@@ -1,5 +1,6 @@
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.launch
+import java.util.*
 
 /**
  * We declare a package-level function main which returns Unit and takes
@@ -188,6 +189,43 @@ fun array2() {
     array.forEach { println(it) }
 }
 
+fun array3() {
+    val arr = IntArray(6) {it + 1}
+    println("Array 3")
+    arr.forEach { println(it) }
+}
+
+fun array4_multidemesinal() {
+    val array = arrayOf(intArrayOf(1, 2),
+            intArrayOf(3, 4),
+            intArrayOf(5, 6, 7))
+
+    println(Arrays.deepToString(array))
+}
+
+fun array5_multidemesinal() {
+    var num = 100
+
+    // Array Initialization
+    var twoDArray = Array(4, {IntArray(3)})
+    for(i in 0..twoDArray.size - 1) {
+        var rowArray = IntArray(3)
+        for(j in 0..rowArray.size - 1) {
+            rowArray[j] = num++
+        }
+        twoDArray[i] = rowArray
+    }
+
+    // Array Value Printing
+    for(row in twoDArray) {
+        for(j in row) {
+            print(j)
+            print(" ")
+        }
+        println("")
+    }
+}
+
 ///////////////////////////////////////////////
 //making list Immutable, Mutable
 fun list() {
@@ -343,19 +381,28 @@ fun main(args: Array<String>) {
     println()
     set()
 
-    ///////////////////////////////////////////////
-    //coroutines
-    println("Kotlin Start")
-    launch(CommonPool) {
-        println("Kotlin Hello")
-    }
-    println("Kotlin End")
-
-
     println()
     println(readNumber("45"))
     println(readNumber2("455"))
     //exception()
     println()
     aritm_operations()
+
+    println()
+    array3()
+
+    println()
+    array4_multidemesinal()
+
+    println()
+    array5_multidemesinal()
+
+    ///////////////////////////////////////////////
+    //coroutines
+    println()
+    println("Kotlin Start")
+    launch(CommonPool) {
+        println("Kotlin Hello")
+    }
+    println("Kotlin End")
 }
