@@ -124,6 +124,57 @@ fun array2() {
 }
 ```
 
+*Example3*
+
+```kotlin
+fun array3() {
+    val arr = IntArray(6) {it + 1}
+    println("Array 3")
+    arr.forEach { println(it) }
+}
+```
+
+**Multidemesinal Array**
+
+*Example1*
+
+```kotlin
+fun array4_multidemesinal() {
+    val array = arrayOf(intArrayOf(1, 2),
+            intArrayOf(3, 4),
+            intArrayOf(5, 6, 7))
+
+    println(Arrays.deepToString(array))
+}
+```
+
+*Example2*
+
+```kotlin
+fun array5_multidemesinal() {
+    var num = 100
+
+    // Array Initialization
+    var twoDArray = Array(4, {IntArray(3)})
+    for(i in 0..twoDArray.size - 1) {
+        var rowArray = IntArray(3)
+        for(j in 0..rowArray.size - 1) {
+            rowArray[j] = num++
+        }
+        twoDArray[i] = rowArray
+    }
+
+    // Array Value Printing
+    for(row in twoDArray) {
+        for(j in row) {
+            print(j)
+            print(" ")
+        }
+        println("")
+    }
+}
+```
+
 ### Making function
 
 ```kotlin
