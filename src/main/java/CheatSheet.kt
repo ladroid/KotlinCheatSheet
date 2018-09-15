@@ -289,6 +289,7 @@ fun readNumber2(reader: String): Int? {
     }
     return number
 }
+
 ///////////////////////////////////////////////
 //ARITHMETIC OPERATIONS
 fun aritm_operations() {
@@ -301,6 +302,34 @@ fun aritm_operations() {
     println(a and b)
     println(a or b)
     println(a xor b)
+}
+
+///////////////////////////////////////////////
+//Clone object
+open class CloningA : Cloneable {
+    open val s = "Hello"
+
+    override public fun clone() : Any {
+        return super.clone()
+    }
+}
+
+fun combine() {
+    val tempa = CloningA()
+    println(tempa) //address
+    val tempb = tempa.clone() //making new address
+    println(tempb.toString())
+}
+
+///////////////////////////////////////////////
+//Copy object
+data class User(val name: String = "", val age: Int = 0)
+
+fun copying() {
+    val jack = User(name = "Jack", age = 1)
+    println(jack)
+    val olderJack = jack.copy(age = 2) //copy
+    println(olderJack)
 }
 ///////////////////////////////////////////////
 
@@ -396,6 +425,12 @@ fun main(args: Array<String>) {
 
     println()
     array5_multidemesinal()
+
+    println()
+    combine()
+
+    println()
+    copying()
 
     ///////////////////////////////////////////////
     //coroutines
