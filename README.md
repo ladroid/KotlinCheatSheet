@@ -396,6 +396,38 @@ fun list() {
 }
 ```
 
+### Clone object
+
+```kotlin
+open class CloningA : Cloneable {
+    open val s = "Hello"
+
+    override public fun clone() : Any {
+        return super.clone()
+    }
+}
+
+fun combine() {
+    val tempa = CloningA()
+    println(tempa) //address
+    val tempb = tempa.clone() //making new address
+    println(tempb.toString())
+}
+```
+
+### Copy object
+
+```kotlin
+data class User(val name: String = "", val age: Int = 0)
+
+fun copying() {
+    val jack = User(name = "Jack", age = 1)
+    println(jack)
+    val olderJack = jack.copy(age = 2) //copy
+    println(olderJack)
+}
+```
+
 ### Coroutines
 
 ```kotlin
@@ -408,3 +440,22 @@ println("Kotlin Hello")
 println("Kotlin End")
 ```
 
+### Web Server
+
+```kotlin
+fun start() {
+    var vertx = Vertx.vertx()
+    var server = vertx.createHttpServer().requestHandler({httpServerRequest ->
+        httpServerRequest.response().end("Hello Vert.x") }).listen(8080,
+            {asyncResult -> if(asyncResult.succeeded()) {
+                println("It works!!!")
+            } else {
+                println("Does not work!!!")
+            }})
+
+}
+
+fun main(args: Array<String>) {
+    start()
+}
+```
